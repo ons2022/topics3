@@ -3,14 +3,23 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const { getProfile, updateProfile } = require('../services/userService');
 
+
+
 /**
  * @swagger
- * /api/user/profile:
- *   post:
- *     summary: Get user profile
- *     description: Retrieve the profile of the currently authenticated user.
+ * /api/user/profile/{id}:
+ *   get:
+ *     summary: Get user profile by ID
+ *     description: Retrieve the profile of a user by their ID. This operation is available to authenticated users only.
  *     security:
  *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The user ID
  *     responses:
  *       200:
  *         description: User profile retrieved successfully
@@ -19,12 +28,28 @@ const { getProfile, updateProfile } = require('../services/userService');
  *             schema:
  *               type: object
  *               properties:
- *                 result:
- *                   type: object
+ *                 firstName:
+ *                   type: string
+ *                 lastName:
+ *                   type: string
+ *                 address:
+ *                   type: string
+ *                 phoneNumber:
+ *                   type: string
+ *                 age:
+ *                   type: integer
+ *                 image:
+ *                   type: string
+ *                 gender:
+ *                   type: string
+ *                 profession:
+ *                   type: string
+ *       404:
+ *         description: User not found
  *       500:
  *         description: Server error
  */
-router.post('/profile', auth, getProfile);
+router.get('/profile', auth, getProfile);
 
 /**
  * @swagger

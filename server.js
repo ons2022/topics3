@@ -6,11 +6,13 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const userRoutes = require('./routes/user');
 const equipmentRoutes = require('./routes/equipment');
-
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = 'mongodb+srv://ons:mAFAiazF4D5mP618@atlascluster.gskrewb.mongodb.net/safelife';
-
+app.use(cors({
+  origin: 'http://localhost:8100' // Replace with the origin of your Angular app
+}));
 // Swagger setup
 const swaggerOptions = {
   definition: {
