@@ -1,0 +1,83 @@
+ion-header {
+    --background: #3b5998; /* Couleur de fond de l'en-tête */
+    --color: #fff; /* Couleur du texte de l'en-tête */
+  }
+  
+  .searchbar {
+    margin: 16px;
+    background: linear-gradient(170deg, rgba(29, 220, 61, 0.9) 0%, rgba(22, 17, 168, 0.9) 68%, rgba(51, 87, 247, 0.9) 100%);
+    /* Fond légèrement transparent pour la barre de recherche */
+    --placeholder-color: #aaa; /* Couleur du texte de l'espace réservé */
+    --color: #333; /* Couleur du texte de la barre de recherche */
+    border-radius: 8px; /* Coins arrondis pour la barre de recherche */
+  }
+  
+  ion-list {
+    border-radius: 5px;
+    margin: 16px;
+  }
+  
+  .list-item {
+    border-radius: 10px;
+    padding: 12px;
+    
+    background: linear-gradient(170deg, rgba(29, 220, 61, 0.9) 0%, rgba(22, 17, 168, 0.9) 68%, rgba(51, 87, 247, 0.9) 100%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+     
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition douce */
+  }
+  
+  .list-item:hover {
+    transform: translateY(-5px); /* Effet de survol avec élévation */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+  }
+  
+  .list-item h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .list-item p {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  
+  .action-button {
+    margin-left: 8px;
+    --color: #fff;
+    --background: transparent;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition pour les boutons d'action */
+  }
+  
+  .edit-button {
+    --color: #4caf50; /* Couleur des icônes d'édition */
+  }
+  
+  .delete-button {
+    --color: #f44336; /* Couleur des icônes de suppression */
+  }
+  
+  .action-button:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+  }
+  
+  .fab-button {
+    --background: linear-gradient(135deg, #34eb92, #3e7fff);
+    --color: #fff;
+    --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .fab-button:hover {
+    transform: scale(1.1);
+    --background: linear-gradient(135deg, #2dbf7f, #2b6bff); /* Dégradé plus foncé au survol */
+  }
+  

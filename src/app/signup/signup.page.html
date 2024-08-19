@@ -1,0 +1,75 @@
+ 
+
+<ion-content [fullscreen]="true" class="signup-content">
+  
+  <ion-card class="signup-card" style="margin-left: -1px;">
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon> First Name
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.firstName" name="firstName" placeholder="Enter your first name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon> Last Name
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.lastName" name="lastName" placeholder="Enter your last name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="home-outline"></ion-icon> Address
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.address" name="address" placeholder="Enter your address"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="call-outline"></ion-icon> Phone Number
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.phoneNumber" name="phoneNumber" type="tel" placeholder="Enter your phone number"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="calendar-outline"></ion-icon> Age
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.age" name="age" type="number" placeholder="Enter your age"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="mail-outline"></ion-icon> Email
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.email" name="email" type="email" placeholder="Enter your email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline"></ion-icon> Password
+      </ion-label>
+      <ion-input [(ngModel)]="userModel.password" name="password" type="password" placeholder="Enter your password"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="shield-checkmark-outline"></ion-icon> Role
+      </ion-label>
+      <ion-select [(ngModel)]="userModel.role">
+        <ion-select-option value="user">User</ion-select-option>
+        <ion-select-option value="admin">Admin</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="full" (click)="signup()" shape="round" class="signup-button">
+      SIGN UP
+    </ion-button>
+    
+    <ion-button expand="full" routerLink="/login" shape="round" fill="outline" color="secondary" class="login-button">
+      BACK TO LOGIN
+    </ion-button>
+
+    <ion-text color="medium" class="already-have-account">Already have an account?</ion-text>
+  </ion-card>
+</ion-content>

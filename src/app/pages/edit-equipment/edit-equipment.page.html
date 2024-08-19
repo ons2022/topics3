@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEditing ? 'Edit Equipment' : 'Add Equipment' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="saveEquipment()" [disabled]="!validateEquipment()" color="secondary">
+        {{ isEditing ? 'Update Equipment' : 'Add Equipment' }}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="edit-equipment-content">
+  <form (ngSubmit)="saveEquipment()">
+    <ion-card class="edit-equipment-card">
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="cart-outline"></ion-icon> Name
+        </ion-label>
+        <ion-input [(ngModel)]="equipment.name" name="name" placeholder="Enter equipment name" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="list-outline"></ion-icon> Functionality Description
+        </ion-label>
+        <ion-textarea [(ngModel)]="equipment.functionalityDescription" name="functionalityDescription" placeholder="Enter functionality description" required></ion-textarea>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="location-outline"></ion-icon> Location Description
+        </ion-label>
+        <ion-textarea [(ngModel)]="equipment.locationDescription" name="locationDescription" placeholder="Enter location description" required></ion-textarea>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="call-outline"></ion-icon> Contact Phone
+        </ion-label>
+        <ion-input type="tel" [(ngModel)]="equipment.contactPhone" name="contactPhone" placeholder="Enter contact phone" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="navigate-outline"></ion-icon> Latitude
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="equipment.latitude" name="latitude" readonly></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="navigate-outline"></ion-icon> Longitude
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="equipment.longitude" name="longitude" readonly></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!validateEquipment()" color="secondary">
+        {{ isEditing ? 'Update Equipment' : 'Add Equipment' }}
+      </ion-button>
+    </ion-card>
+  </form>
+
+  
+</ion-content>

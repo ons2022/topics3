@@ -1,0 +1,30 @@
+<ion-content class="admin-home-content">
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title style="color: white;">Welcome, Admin!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p style="color: white;">Manage the features below:</p>
+      <ion-button expand="full" shape="round"  fill="outline" color="secondary" class="action-button" routerLink="/profile">
+        <ion-icon name="person-outline" slot="start"></ion-icon> Profile
+      </ion-button>
+      <ion-button expand="full" shape="round" class="action-button" fill="outline" color="secondary"routerLink="/users">
+        <ion-icon name="people-outline" slot="start"></ion-icon> Manage Users
+      </ion-button>
+      <ion-button expand="full" shape="round" class="action-button" fill="outline" color="secondary" routerLink="/equipment">
+        <ion-icon name="help-circle-outline" slot="start"></ion-icon> Manage Equipment
+      </ion-button>
+       
+      <ion-button expand="full" shape="round"  fill="outline" color="secondary" fill="outline" color="secondary" class="action-button" routerLink="/maps">
+        <ion-icon name="map-outline" slot="start"></ion-icon> Maps
+      </ion-button>
+ 
+      <ion-button expand="full" shape="round" class="action-button" fill="outline" color="secondary"routerLink="/reports">
+        <ion-icon name="document-outline" slot="start"></ion-icon> View Reports
+      </ion-button>
+    </ion-card-content>
+    <ion-button expand="full" shape="round" class="logout-button"    (click)="logout()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon> Logout
+    </ion-button>
+  </ion-card>
+</ion-content>

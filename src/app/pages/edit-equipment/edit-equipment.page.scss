@@ -1,0 +1,58 @@
+.edit-equipment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(to bottom, #3b5998 0%, #8b9dc3 100%);
+    padding: 20px;
+  }
+  
+  .edit-equipment-card {
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(170deg, rgba(29, 220, 61, 0.9) 0%, rgba(22, 17, 168, 0.9) 68%, rgba(51, 87, 247, 0.9) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  ion-item {
+    margin-bottom: 10px;
+    --background: transparent;
+    --border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #fff;
+  }
+  
+  ion-label {
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  ion-input,
+  ion-textarea {
+    --padding-start: 0;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  ion-icon {
+    color: #fff;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --background: #ffffff;
+    --color: #2575fc;
+    border-radius: 25px;
+    padding: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  ion-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2dbf7f, #2b6bff);
+  }
+  

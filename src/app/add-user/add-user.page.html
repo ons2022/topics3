@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true" class="signup-content">
+  <ion-card class="signup-card">
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon> First Name
+      </ion-label>
+      <ion-input [(ngModel)]="user.firstName" placeholder="Enter your first name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon> Last Name
+      </ion-label>
+      <ion-input [(ngModel)]="user.lastName" placeholder="Enter your last name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="home-outline"></ion-icon> Address
+      </ion-label>
+      <ion-input [(ngModel)]="user.address" placeholder="Enter your address"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="call-outline"></ion-icon> Phone Number
+      </ion-label>
+      <ion-input [(ngModel)]="user.phoneNumber" type="tel" placeholder="Enter your phone number"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="calendar-outline"></ion-icon> Age
+      </ion-label>
+      <ion-input [(ngModel)]="user.age" type="number" placeholder="Enter your age"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="mail-outline"></ion-icon> Email
+      </ion-label>
+      <ion-input [(ngModel)]="user.email" type="email" placeholder="Enter your email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline"></ion-icon> Password
+      </ion-label>
+      <ion-input [(ngModel)]="user.password" type="password" placeholder="Enter your password"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <ion-icon name="shield-checkmark-outline"></ion-icon> Role
+      </ion-label>
+      <ion-select [(ngModel)]="user.role">
+        <ion-select-option value="user">User</ion-select-option>
+        <ion-select-option value="admin">Admin</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="full" (click)="addUser()" shape="round" class="signup-button">
+      ADD USER
+    </ion-button>
+
+    <ion-button expand="full" routerLink="/users" shape="round" fill="outline" color="secondary" class="login-button">
+      BACK TO USERS
+    </ion-button>
+  </ion-card>
+</ion-content>

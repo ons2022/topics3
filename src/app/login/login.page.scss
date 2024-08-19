@@ -1,0 +1,112 @@
+ /* Centrage vertical et horizontal de la carte */
+.login-content {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.login-header {
+  width: 100%;
+  height: 150px; /* Réduit la hauteur pour un design plus épuré */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.header-image {
+  max-width: 120px; /* Réduit la taille de l'image */
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(170deg, rgba(29, 220, 61, 0.9) 0%, rgba(22,17,168,0.9) 68%, rgba(51,87,247,0.9) 100%);
+  padding: 20px; /* Réduit le padding pour un design plus compact */
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Centre le texte dans la carte */
+}
+
+/* Styles pour les éléments de formulaire */
+ion-item {
+  margin-bottom: 20px; /* Augmente l'espace entre les éléments */
+  --background: transparent;
+  --border-radius: 10px; /* Coins arrondis */
+  --border-width: 1px;
+  --border-color: #fff; /* Bordure blanche pour le champ de saisie */
+}
+
+ion-input {
+  --padding-start: 0; /* Élimine le padding par défaut */
+  color: #fff; /* Couleur du texte dans le champ de saisie */
+}
+
+ion-label {
+  color: #fff; /* Texte blanc */
+  font-size: 14px; /* Taille de police améliorée */
+}
+
+ion-icon {
+  color: #fff; /* Icônes blanches */
+}
+
+/* Styles pour les boutons */
+.login-button,
+.signup-button {
+  margin-top: 15px;
+  padding: 14px; /* Augmente le padding pour des boutons plus larges */
+  border-radius: 25px; /* Coins plus arrondis */
+  background: linear-gradient(135deg, #34eb92, #3e7fff); /* Dégradé de couleur */
+  color: #fff; /* Couleur du texte blanc */
+  transition: background 0.3s ease, transform 0.3s ease; /* Transition pour les changements d'état */
+  border: none; /* Supprime les bordures par défaut */
+  font-size: 16px; /* Taille de police améliorée */
+}
+
+.login-button:hover,
+.signup-button:hover {
+  transform: translateY(-2px); /* Réduit l'effet d'élévation au survol */
+  background: linear-gradient(135deg, #2dbf7f, #2b6bff); /* Couleur plus foncée au survol */
+}
+
+.facebook-button {
+  margin-top: 10px;
+  --color: #fff;
+  --background: transparent;
+  border: 1px solid #fff; /* Bordure blanche */
+  padding: 14px; /* Augmente le padding */
+  font-size: 16px; /* Taille de police améliorée */
+  border-radius: 25px; /* Coins plus arrondis */
+  color: #fff; /* Couleur du texte blanc */
+}
+
+.forgot-password {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff; /* Texte blanc pour le lien */
+}
+@media (min-width: 601px) {
+  .login-card {
+    width: 80%;
+    padding: 25px;
+  }
+
+   
+}
+@media (max-width: 600px) {
+  .login-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  ion-item {
+    --border-radius: 5px;
+  }
+
+   
+}

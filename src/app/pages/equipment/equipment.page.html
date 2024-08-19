@@ -1,0 +1,36 @@
+<!-- src/app/pages/equipment/equipment.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Manage Equipment</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchEquipment()" class="searchbar"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let equipment of equipmentList" class="list-item">
+       
+      <ion-label>
+        <h2>{{ equipment.name }}</h2>
+        <p>Functionality: {{ equipment.functionalityDescription }}</p>
+        <p>Location: {{ equipment.locationDescription }}</p>
+        <p>Contact: {{ equipment.contactPhone }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="primary" (click)="editEquipment(equipment._id)" class="action-button">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="danger" (click)="deleteEquipment(equipment._id)" class="action-button">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addEquipment()" class="fab-button">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,95 @@
+ 
+
+<ion-content [fullscreen]="true" class="profile-content">
+  
+    <ion-card style="margin-left: -1px;" class="profile-card">
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="person-outline"></ion-icon> First Name
+        </ion-label>
+        <ion-input [(ngModel)]="profile.firstName" name="firstName" placeholder="Enter your first name"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="person-outline"></ion-icon> Last Name
+        </ion-label>
+        <ion-input [(ngModel)]="profile.lastName" name="lastName" placeholder="Enter your last name"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="home-outline"></ion-icon> Address
+        </ion-label>
+        <ion-input [(ngModel)]="profile.address" name="address" placeholder="Enter your address"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="call-outline"></ion-icon> Phone Number
+        </ion-label>
+        <ion-input [(ngModel)]="profile.phoneNumber" name="phoneNumber" type="tel" placeholder="Enter your phone number"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="calendar-outline"></ion-icon> Age
+        </ion-label>
+        <ion-input [(ngModel)]="profile.age" name="age" type="number" placeholder="Enter your age"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="mail-outline"></ion-icon> Email
+        </ion-label>
+        <ion-input [(ngModel)]="profile.email" name="email" type="email" placeholder="Enter your email"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="lock-closed-outline"></ion-icon> Password
+        </ion-label>
+        <ion-input [(ngModel)]="profile.password" name="password" type="password" placeholder="Enter your password"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="none">
+        <ion-label position="floating">
+          <ion-icon name="shield-checkmark-outline"></ion-icon> Role
+        </ion-label>
+        <ion-select [(ngModel)]="profile.role">
+          <ion-select-option value="user">User</ion-select-option>
+          <ion-select-option value="admin">Admin</ion-select-option>
+        </ion-select>
+      </ion-item>
+       
+  
+      <ion-button expand="full" (click)="updateProfile()" shape="round" class="update-button">
+        UPDATE PROFILE
+      </ion-button>
+  
+      <ion-button 
+      *ngIf="profile.role === 'admin'" 
+      expand="full" 
+      routerLink="/admin-home" 
+      shape="round" 
+      fill="outline" 
+      color="secondary" 
+      class="home-button">
+        BACK TO HOME
+    </ion-button>
+    
+    <ion-button 
+      *ngIf="profile.role === 'user'" 
+      expand="full" 
+      routerLink="/user-home" 
+      shape="round" 
+      fill="outline" 
+      color="secondary" 
+      class="home-button">
+        BACK TO HOME
+    </ion-button>
+    
+      <ion-text color="medium" class="profile-info" style="color: white;">Update your profile details.</ion-text>
+    </ion-card>
+  </ion-content>
+  
