@@ -1,0 +1,117 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State private var number1 = ""
+    @State private var number2 = ""
+    @State private var result: Double = 0.0
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("Calculator")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 50)
+
+            // Text fields for input
+            TextField("Enter number 1", text: $number1)
+                .keyboardType(.decimalPad)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(5)
+                .shadow(radius: 5)
+
+            TextField("Enter number 2", text: $number2)
+                .keyboardType(.decimalPad)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(5)
+                .shadow(radius: 5)
+
+            // Result Display
+            Text("\(result)")
+                .font(.largeTitle)
+                .fontWeight(.medium)
+                .padding(.top, 20)
+
+            // Operation buttons
+            HStack(spacing: 20) {
+                Button(action: {
+                    self.calculate(operation: "+")
+                }) {
+                    Text("+")
+                        .font(.title)
+                        .frame(width: 50, height: 50)
+                        .background(Color.brown)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+
+                Button(action: {
+                    self.calculate(operation: "-")
+                }) {
+                    Text("-")
+                        .font(.title)
+                        .frame(width: 50, height: 50)
+                        .background(Color.brown)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+
+                Button(action: {
+                    self.calculate(operation: "*")
+                }) {
+                    Text("×")
+                        .font(.title)
+                        .frame(width: 50, height: 50)
+                        .background(Color.brown)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+
+                Button(action: {
+                    self.calculate(operation: "/")
+                }) {
+                    Text("÷")
+                        .font(.title)
+                        .frame(width: 50, height: 50)
+                        .background(Color.brown)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+            }
+            .padding(.top, 20)
+
+            Spacer()
+        }
+        .padding()
+        .background(Color.gray.opacity(0.3)) // background color
+        .edgesIgnoringSafeArea(.all)
+    }
+
+    // Function to perform the calculation
+    func calculate(operation: String) {
+        guard let num1 = Double(number1), let num2 = Double(number2) else {
+            result = 0.0
+            return
+        }
+
+        switch operation {
+        case "+":
+            result = num1 + num2
+        case "-":
+            result = num1 - num2
+        case "*":
+            result = num1 * num2
+        case "/":
+            result = num2 != 0 ? num1 / num2 : 0.0
+        default:
+            result = 0.0
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
